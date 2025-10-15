@@ -12,17 +12,17 @@ $capitals = array(
 );
 
 // Menampilkan salah satu Array
-echo $capital["USA"];
+echo $capitals["USA"];
 
 foreach ($capitals as $key => $value) {
   echo "{$key} => {$value} <br>";
 }
 
 // Mengganti isi dari elemen Assosiative Array
-echo $capital["USA"] = "Las Vegas";
+echo $capitals["USA"] = "Las Vegas";
 
 // Menambah satu key baru di akhir elemen
-echo $capital["China"] = "Beijing";
+echo $capitals["China"] = "Beijing";
 
 // Menghapus elemen terakhir
 array_pop($capitals);
