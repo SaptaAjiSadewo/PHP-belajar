@@ -9,12 +9,19 @@
 </head>
   <body>
     Ini adalah Halaman Home
-    <a href="index.php">Ini akan menuju ke Halaman Login</a>
+    <form action="home.php" method="post">
+      <input type="submit" name="logout" value="logout"> 
+    </form>
   </body>
 </html>
 
 <?php
   echo $_SESSION["username"] . "<br>";
   echo $_SESSION["password"] . "<br>";
+
+if (isset($_POST["logout"])) {
+  session_destroy();
+  header("Location: index.php");
+}
 ?>
 
