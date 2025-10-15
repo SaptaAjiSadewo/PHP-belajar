@@ -1,0 +1,5 @@
+id int PRIMARY KEY AUTO_INCREMENT
+user varchar 25 UNIQUE
+password CHAR 255
+reg_date DATETIME CURRENT_TIME
+
