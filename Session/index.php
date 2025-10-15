@@ -17,16 +17,31 @@
 <title>Page Title</title>
 </head>
   <body>
-    Ini adalah Halaman Login
-    <a href="home.php">Ini akan menuju ke Halaman Login</a>
+    <form action="index.php" method="post">
+      <label>Username :</label>
+      <input type="text" name="username">
+      <label>Password :</label>
+      <input type="password" name="password">
+      <input type="submit" name="login" value="login">
+    </form>
   </body>
 </html>
 
 <?php
-  $_SESSION["username"] = "Sapta";
-  $_SESSION["password"] = "admin";
 
-  echo $_SESSION["username"] . "<br>";
-  echo $_SESSION["password"] . "<br>";
+if(isset[$_POST["login"]])
+
+  if(!empty($_POST["username"]) && !empty($_POST["password"]) ){
+      $_SESSION["username"] = $_POST["username"];
+      $_SESSION["password"] = $_POST["password"];
+
+      header("Location: home.php");
+
+      //echo $_SESSION["username"] . "<br>";
+      //echo $_SESSION["password"] . "<br>";
+  } else {
+      echo "Missing Username/Password";
+  }
+    
 ?>
 
